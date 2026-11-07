@@ -1,2 +1,48 @@
-# windows-tehran-time-sync
-A Windows batch script to set the Tehran time zone and automatically synchronize system time using Iranian and international NTP servers, with an HTTPS fallback.
+# Windows Tehran Time Sync
+
+**تنظیم خودکار منطقه زمانی تهران و همگام‌سازی ساعت ویندوز با سرورهای زمان ایران و جهان**
+
+این اسکریپت Batch برای ویندوز طراحی شده است تا منطقه زمانی سیستم را روی تهران تنظیم کند و ساعت ویندوز را با استفاده از سرورهای معتبر زمان (NTP) همگام‌سازی کند.
+
+## Features | امکانات
+
+- تنظیم خودکار منطقه زمانی تهران (`Iran Standard Time`)
+- درخواست دسترسی Administrator در صورت نیاز
+- فعال‌سازی و آماده‌سازی سرویس Windows Time
+- تلاش برای همگام‌سازی ساعت با سرورهای NTP ایران
+- استفاده از سرورهای NTP آسیا و بین‌المللی در صورت عدم موفقیت
+- استفاده از HTTPS به‌عنوان روش جایگزین در صورت شکست NTP
+- نمایش وضعیت نهایی همگام‌سازی ساعت
+
+## Time Synchronization Sources
+
+اسکریپت به‌ترتیب از منابع زیر استفاده می‌کند:
+
+1. سرورهای NTP ایران
+2. سرورهای NTP آسیا و بین‌المللی
+3. دریافت زمان از هدر HTTP Date وب‌سایت‌های معتبر از طریق HTTPS
+
+## Requirements | پیش‌نیازها
+
+- Windows 10 / Windows 11
+- اتصال به اینترنت
+- دسترسی Administrator
+- فعال بودن PowerShell در ویندوز
+
+## How to Use | نحوه استفاده
+
+1. فایل `Set-Tehran-Timezone-fixed.bat` را دانلود کنید.
+2. روی فایل دوبار کلیک کنید.
+3. در پنجره User Account Control گزینه Yes را انتخاب کنید.
+4. منتظر بمانید تا مراحل تنظیم منطقه زمانی و همگام‌سازی ساعت انجام شود.
+
+## Important Notes | نکات مهم
+
+- اجرای اسکریپت باعث تغییر تنظیمات منطقه زمانی ویندوز و پیکربندی سرویس Windows Time می‌شود.
+- در صورت مسدود بودن UDP Port 123، همگام‌سازی NTP ممکن است انجام نشود.
+- روش HTTPS فقط در صورت شکست روش‌های NTP اجرا می‌شود.
+- اگر ساعت سیستم پس از خاموش و روشن شدن مجدداً به‌هم می‌ریزد، باتری CMOS مادربرد را بررسی کنید.
+
+## License
+
+Free to use and modify. Check the repository license for redistribution terms.
